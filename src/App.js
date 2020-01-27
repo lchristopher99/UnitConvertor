@@ -16,29 +16,29 @@ class App extends Component {
     let unit1 = this.state.Unit1;
     let unit2 = this.state.Unit2;
 
-    if (unit1 == "nautical" && unit2 == "miles") {
+    if (unit1 === "nautical" && unit2 === "miles") {
       num = num * 1.15078;
-    } else if (unit1 == "nautical" && unit2 == "kilometers") {
+    } else if (unit1 === "nautical" && unit2 === "kilometers") {
       num = num * 1.852;
-    } else if (unit1 == "nautical" && unit2 == "feet") {
+    } else if (unit1 === "nautical" && unit2 === "feet") {
       num = num * 6076.11548556;
-    } else if (unit1 == "miles" && unit2 == "nautical") {
+    } else if (unit1 === "miles" && unit2 === "nautical") {
       num = num / 1.15078;
-    } else if (unit1 == "miles" && unit2 == "kilometers") {
+    } else if (unit1 === "miles" && unit2 === "kilometers") {
       num = num * 1.609344;
-    } else if (unit1 == "miles" && unit2 == "feet") {
+    } else if (unit1 === "miles" && unit2 === "feet") {
       num = num * 5280;
-    } else if (unit1 == "kilometers" && unit2 == "nautical") {
+    } else if (unit1 === "kilometers" && unit2 === "nautical") {
       num = num / 1.852;
-    } else if (unit1 == "kilometers" && unit2 == "miles") {
+    } else if (unit1 === "kilometers" && unit2 === "miles") {
       num = num / 1.609344;
-    } else if (unit1 == "kilometers" && unit2 == "feet") {
+    } else if (unit1 === "kilometers" && unit2 === "feet") {
       num = num / 0.0003048;
-    } else if (unit1 == "feet" && unit2 == "nautical") {
+    } else if (unit1 === "feet" && unit2 === "nautical") {
       num = num / 6076.11549;
-    } else if (unit1 == "feet" && unit2 == "miles") {
+    } else if (unit1 === "feet" && unit2 === "miles") {
       num = num / 5280;
-    } else if (unit1 == "feet" && unit2 == "kilometers") {
+    } else if (unit1 === "feet" && unit2 === "kilometers") {
       num = num * 0.0003048;
     }
     this.setState({ defVal: num });
@@ -52,7 +52,7 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-        <h1>{props.unitNum}</h1>
+          <h1>{props.unitNum}</h1>
           <select onChange={(e) => this.handleDrop(e, props.unitNum)}>
             <option value="nautical">Nautical</option>
             <option value="miles">Miles</option>
@@ -60,7 +60,7 @@ class App extends Component {
             <option value="feet">Feet</option>
           </select>
           <label>
-            <input readonly={props.readonly} type="text" defaultValue={props.value} onChange={(e) => this.handleChange(e, props.unitNum)} />
+            <input readOnly={props.readonly} type="text" defaultValue={props.value} onChange={(e) => this.handleChange(e, props.unitNum)} />
           </label>
         </form>
       </div>
