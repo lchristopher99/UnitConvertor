@@ -7,8 +7,7 @@ class App extends Component {
     this.state = {
       Unit1: "nautical",
       Unit2: "nautical",
-      defVal1: null,
-      defVal2: null
+      defVal: null,
     }
   }
 
@@ -42,7 +41,7 @@ class App extends Component {
     } else if (unit1 == "feet" && unit2 == "kilometers") {
       num = num * 0.0003048;
     }
-    this.setState({ defVal2: num });
+    this.setState({ defVal: num });
   }
 
   handleDrop = (e, unitNum) => {
@@ -69,14 +68,13 @@ class App extends Component {
   }
 
   render() {
-    let val1 = this.state.defVal1;
-    let val2 = this.state.defVal2;
+    let val = this.state.defVal;
 
     return (
       <div>
         <h3>Welcome to the "Nos is a scrub" unit convertor.</h3>
-        <this.UnitBox unitNum={"Unit1"} value={val1}/>
-        <this.UnitBox readonly="readonly" unitNum={"Unit2"} value={val2}/>
+        <this.UnitBox unitNum={"Unit1"}/>
+        <this.UnitBox readonly="readonly" unitNum={"Unit2"} value={val}/>
       </div>
     );
   }
