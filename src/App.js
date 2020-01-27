@@ -21,43 +21,30 @@ class App extends Component {
 
     if (unit1 == "nautical" && unit2 == "miles") {
       num = num * 1.15078;
-      this.setState({ defVal2: num });
     } else if (unit1 == "nautical" && unit2 == "kilometers") {
       num = num * 1.852;
-      this.setState({ defVal2: num });
     } else if (unit1 == "nautical" && unit2 == "feet") {
       num = num * 6076.11548556;
-      this.setState({ defVal2: num });
     } else if (unit1 == "miles" && unit2 == "nautical") {
       num = num / 1.15078;
-      this.setState({ defVal2: num });
     } else if (unit1 == "miles" && unit2 == "kilometers") {
       num = num * 1.609344;
-      this.setState({ defVal2: num });
     } else if (unit1 == "miles" && unit2 == "feet") {
       num = num * 5280;
-      this.setState({ defVal2: num });
     } else if (unit1 == "kilometers" && unit2 == "nautical") {
       num = num / 1.852;
-      this.setState({ defVal2: num });
     } else if (unit1 == "kilometers" && unit2 == "miles") {
       num = num / 1.609344;
-      this.setState({ defVal2: num });
     } else if (unit1 == "kilometers" && unit2 == "feet") {
       num = num / 0.0003048;
-      this.setState({ defVal2: num });
     } else if (unit1 == "feet" && unit2 == "nautical") {
       num = num / 6076.11549;
-      this.setState({ defVal2: num });
     } else if (unit1 == "feet" && unit2 == "miles") {
       num = num / 5280;
-      this.setState({ defVal2: num });
     } else if (unit1 == "feet" && unit2 == "kilometers") {
       num = num * 0.0003048;
-      this.setState({ defVal2: num });
-    } else {
-      this.setState({ defVal2: num });
     }
+    this.setState({ defVal2: num });
   }
 
   handleDrop = (e, unitNum) => {
