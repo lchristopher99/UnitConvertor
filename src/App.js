@@ -10,8 +10,6 @@ class App extends Component {
       defVal1: null,
       defVal2: null
     }
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
